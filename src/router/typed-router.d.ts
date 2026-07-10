@@ -37,7 +37,15 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       Record<never, never>,
       | '//(index)'
+      | '//autor/AutorEdit'
+      | '//autor/AutorList'
+      | '//categoria/CategoriaEdit'
+      | '//categoria/CategoriaList'
+      | '//livro/LivroEdit'
+      | '//livro/LivroList'
       | '//second'
+      | '//usuario/UsuarioEdit'
+      | '//usuario/UsuarioList'
     >,
     '//(index)': RouteRecordInfo<
       '//(index)',
@@ -46,9 +54,65 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '//autor/AutorEdit': RouteRecordInfo<
+      '//autor/AutorEdit',
+      '/autor/AutorEdit',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//autor/AutorList': RouteRecordInfo<
+      '//autor/AutorList',
+      '/autor/AutorList',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//categoria/CategoriaEdit': RouteRecordInfo<
+      '//categoria/CategoriaEdit',
+      '/categoria/CategoriaEdit',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//categoria/CategoriaList': RouteRecordInfo<
+      '//categoria/CategoriaList',
+      '/categoria/CategoriaList',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//livro/LivroEdit': RouteRecordInfo<
+      '//livro/LivroEdit',
+      '/livro/LivroEdit',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//livro/LivroList': RouteRecordInfo<
+      '//livro/LivroList',
+      '/livro/LivroList',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '//second': RouteRecordInfo<
       '//second',
       '/second',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//usuario/UsuarioEdit': RouteRecordInfo<
+      '//usuario/UsuarioEdit',
+      '/usuario/UsuarioEdit',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//usuario/UsuarioList': RouteRecordInfo<
+      '//usuario/UsuarioList',
+      '/usuario/UsuarioList',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -77,7 +141,15 @@ declare module 'vue-router/auto-routes' {
       routes:
         | '/'
         | '//(index)'
+        | '//autor/AutorEdit'
+        | '//autor/AutorList'
+        | '//categoria/CategoriaEdit'
+        | '//categoria/CategoriaList'
+        | '//livro/LivroEdit'
+        | '//livro/LivroList'
         | '//second'
+        | '//usuario/UsuarioEdit'
+        | '//usuario/UsuarioList'
       views:
         | 'default'
       pathParamNames:
@@ -91,9 +163,73 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
+    'src/pages/index/autor/AutorEdit.vue': {
+      routes:
+        | '//autor/AutorEdit'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/autor/AutorList.vue': {
+      routes:
+        | '//autor/AutorList'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/categoria/CategoriaEdit.vue': {
+      routes:
+        | '//categoria/CategoriaEdit'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/categoria/CategoriaList.vue': {
+      routes:
+        | '//categoria/CategoriaList'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/livro/LivroEdit.vue': {
+      routes:
+        | '//livro/LivroEdit'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/livro/LivroList.vue': {
+      routes:
+        | '//livro/LivroList'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
     'src/pages/index/second.vue': {
       routes:
         | '//second'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/usuario/UsuarioEdit.vue': {
+      routes:
+        | '//usuario/UsuarioEdit'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/usuario/UsuarioList.vue': {
+      routes:
+        | '//usuario/UsuarioList'
       views:
         | never
       pathParamNames:
