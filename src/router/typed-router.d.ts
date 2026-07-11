@@ -41,6 +41,7 @@ declare module 'vue-router/auto-routes' {
       | '//autor/AutorList'
       | '//categoria/CategoriaEdit'
       | '//categoria/CategoriaList'
+      | '//dashboard/Dashboard'
       | '//livro/LivroEdit'
       | '//livro/LivroList'
       | '//second'
@@ -78,6 +79,13 @@ declare module 'vue-router/auto-routes' {
     '//categoria/CategoriaList': RouteRecordInfo<
       '//categoria/CategoriaList',
       '/categoria/CategoriaList',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//dashboard/Dashboard': RouteRecordInfo<
+      '//dashboard/Dashboard',
+      '/dashboard/Dashboard',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -145,6 +153,7 @@ declare module 'vue-router/auto-routes' {
         | '//autor/AutorList'
         | '//categoria/CategoriaEdit'
         | '//categoria/CategoriaList'
+        | '//dashboard/Dashboard'
         | '//livro/LivroEdit'
         | '//livro/LivroList'
         | '//second'
@@ -190,6 +199,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index/categoria/CategoriaList.vue': {
       routes:
         | '//categoria/CategoriaList'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/dashboard/Dashboard.vue': {
+      routes:
+        | '//dashboard/Dashboard'
       views:
         | never
       pathParamNames:
