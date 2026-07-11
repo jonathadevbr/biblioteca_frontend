@@ -11,15 +11,18 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-toolbar-title> BiblioSystem </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer style="background-color: #F5F0E9;" v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <div class="row">
+          <q-img :src="logo" style="width: 100px;" contain />
+          <q-item-label header class="text-h6"> BiblioSystem </q-item-label>
+        </div>
+
 
         <EssentialLink
           v-for="link in linksList"
@@ -36,54 +39,49 @@
 </template>
 
 <script setup lang="ts">
+
+import { useRouter } from 'vue-router'
+
+import logo from '@/assets/logo-bibliosystem.png'
 import { ref } from "vue";
 import EssentialLink, {
   type EssentialLinkProps
 } from "@/components/EssentialLink.vue";
 
+const router = useRouter()
+router.push('/dashboard/Dashboard')
+
 const linksList: EssentialLinkProps[] = [
   {
-    label: "Docs",
+    label: "Dashboard",
     caption: "quasar.dev",
     icon: "school",
     link: "https://quasar.dev"
   },
   {
-    label: "Github",
+    label: "Acervo",
     caption: "github.com/quasarframework",
     icon: "code",
     link: "https://github.com/quasarframework"
   },
   {
-    label: "Discord Chat Channel",
+    label: "Empréstimo",
     caption: "chat.quasar.dev",
     icon: "chat",
     link: "https://chat.quasar.dev"
   },
   {
-    label: "Forum",
+    label: "Leitores",
     caption: "forum.quasar.dev",
     icon: "record_voice_over",
     link: "https://forum.quasar.dev"
   },
   {
-    label: "Twitter",
+    label: "Relatórios",
     caption: "@quasarframework",
     icon: "rss_feed",
     link: "https://twitter.quasar.dev"
   },
-  {
-    label: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev"
-  },
-  {
-    label: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev"
-  }
 ];
 
 const leftDrawerOpen = ref(false);
