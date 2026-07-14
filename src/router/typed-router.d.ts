@@ -37,13 +37,11 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       Record<never, never>,
       | '//(index)'
-      | '//autor/AutorEdit'
-      | '//autor/AutorList'
-      | '//categoria/CategoriaEdit'
-      | '//categoria/CategoriaList'
+      | '//acervo/AcervoList'
       | '//dashboard/Dashboard'
-      | '//livro/LivroEdit'
-      | '//livro/LivroList'
+      | '//emprestimo/EmprestimoEdit'
+      | '//emprestimo/EmprestimoList'
+      | '//relatorio/RelatorioList'
       | '//second'
       | '//usuario/UsuarioEdit'
       | '//usuario/UsuarioList'
@@ -55,30 +53,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '//autor/AutorEdit': RouteRecordInfo<
-      '//autor/AutorEdit',
-      '/autor/AutorEdit',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '//autor/AutorList': RouteRecordInfo<
-      '//autor/AutorList',
-      '/autor/AutorList',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '//categoria/CategoriaEdit': RouteRecordInfo<
-      '//categoria/CategoriaEdit',
-      '/categoria/CategoriaEdit',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '//categoria/CategoriaList': RouteRecordInfo<
-      '//categoria/CategoriaList',
-      '/categoria/CategoriaList',
+    '//acervo/AcervoList': RouteRecordInfo<
+      '//acervo/AcervoList',
+      '/acervo/AcervoList',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -90,16 +67,23 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '//livro/LivroEdit': RouteRecordInfo<
-      '//livro/LivroEdit',
-      '/livro/LivroEdit',
+    '//emprestimo/EmprestimoEdit': RouteRecordInfo<
+      '//emprestimo/EmprestimoEdit',
+      '/emprestimo/EmprestimoEdit',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '//livro/LivroList': RouteRecordInfo<
-      '//livro/LivroList',
-      '/livro/LivroList',
+    '//emprestimo/EmprestimoList': RouteRecordInfo<
+      '//emprestimo/EmprestimoList',
+      '/emprestimo/EmprestimoList',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//relatorio/RelatorioList': RouteRecordInfo<
+      '//relatorio/RelatorioList',
+      '/relatorio/RelatorioList',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -149,13 +133,11 @@ declare module 'vue-router/auto-routes' {
       routes:
         | '/'
         | '//(index)'
-        | '//autor/AutorEdit'
-        | '//autor/AutorList'
-        | '//categoria/CategoriaEdit'
-        | '//categoria/CategoriaList'
+        | '//acervo/AcervoList'
         | '//dashboard/Dashboard'
-        | '//livro/LivroEdit'
-        | '//livro/LivroList'
+        | '//emprestimo/EmprestimoEdit'
+        | '//emprestimo/EmprestimoList'
+        | '//relatorio/RelatorioList'
         | '//second'
         | '//usuario/UsuarioEdit'
         | '//usuario/UsuarioList'
@@ -172,33 +154,9 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/index/autor/AutorEdit.vue': {
+    'src/pages/index/acervo/AcervoList.vue': {
       routes:
-        | '//autor/AutorEdit'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/index/autor/AutorList.vue': {
-      routes:
-        | '//autor/AutorList'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/index/categoria/CategoriaEdit.vue': {
-      routes:
-        | '//categoria/CategoriaEdit'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/index/categoria/CategoriaList.vue': {
-      routes:
-        | '//categoria/CategoriaList'
+        | '//acervo/AcervoList'
       views:
         | never
       pathParamNames:
@@ -212,17 +170,25 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/index/livro/LivroEdit.vue': {
+    'src/pages/index/emprestimo/EmprestimoEdit.vue': {
       routes:
-        | '//livro/LivroEdit'
+        | '//emprestimo/EmprestimoEdit'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/index/livro/LivroList.vue': {
+    'src/pages/index/emprestimo/EmprestimoList.vue': {
       routes:
-        | '//livro/LivroList'
+        | '//emprestimo/EmprestimoList'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/relatorio/RelatorioList.vue': {
+      routes:
+        | '//relatorio/RelatorioList'
       views:
         | never
       pathParamNames:
