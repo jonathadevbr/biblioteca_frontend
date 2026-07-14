@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="q-pa-sm">
       <q-toolbar>
         <q-btn
           flat
@@ -11,23 +11,25 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> BiblioSystem </q-toolbar-title>
+        <q-toolbar-title> BiblioSystem - Gestão de acervo </q-toolbar-title>
 
       </q-toolbar>
     </q-header>
 
     <q-drawer style="background-color: #F5F0E9;" v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <div class="row">
-          <q-img :src="logo" style="width: 100px;" contain />
-          <q-item-label header class="text-h6"> BiblioSystem </q-item-label>
+        <div class="q-pa-sm row justify-center items-center">
+          <q-img :src="logo" style="width: 50px;" contain />
+          <q-item-label header class="text-h6 q-border-bottom q-pb-sm">BiblioSystem</q-item-label>
         </div>
+        <q-separator />
 
 
         <EssentialLink
           v-for="link in linksList"
           :key="link.label"
           v-bind="link"
+          class="q-pa-md"
         />
       </q-list>
     </q-drawer>
@@ -54,33 +56,33 @@ router.push('/dashboard/Dashboard')
 const linksList: EssentialLinkProps[] = [
   {
     label: "Dashboard",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev"
+    caption: "Dashboard",
+    icon: "dashboard",
+    link: "/dashboard/Dashboard"
   },
   {
     label: "Acervo",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework"
+    caption: "Acervo",
+    icon: "book",
+    link: "/acervo/AcervoList"
   },
   {
     label: "Empréstimo",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev"
+    caption: "Empréstimo",
+    icon: "library_add",
+    link: "/emprestimo/EmprestimoList"
   },
   {
-    label: "Leitores",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev"
+    label: "Usuários",
+    caption: "Usuários",
+    icon: "person",
+    link: "/usuario/UsuarioList"
   },
   {
     label: "Relatórios",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev"
+    caption: "Relatórios",
+    icon: "analytics",
+    link: "/relatorio/RelatorioList"
   },
 ];
 
