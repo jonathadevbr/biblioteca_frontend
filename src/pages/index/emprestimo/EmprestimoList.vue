@@ -11,10 +11,9 @@
 
 </script>
 
-<style scoped>
-.titulo-emprestimo {
+<style scoped lang="sass">
+.titulo-emprestimo
   font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #1a2e24;
   font-weight: 600;
-}
 </style>

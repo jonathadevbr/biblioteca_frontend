@@ -11,10 +11,9 @@
 
 </script>
 
-<style scoped>
-.titulo-dasboard {
+<style scoped lang="sass">
+.titulo-dasboard
   font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #1a2e24;
   font-weight: 600;
-}
 </style>

@@ -44,10 +44,9 @@ import { ref } from 'vue'
 const tab = ref('livros')
 </script>
 
-<style scoped>
-.titulo-acervo {
+<style scoped lang="sass">
+.titulo-acervo
   font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #1a2e24;
   font-weight: 600;
-}
 </style>
