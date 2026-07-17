@@ -41,7 +41,7 @@ declare module 'vue-router/auto-routes' {
       | '//dashboard/Dashboard'
       | '//emprestimo/EmprestimoEdit'
       | '//emprestimo/EmprestimoList'
-      | '//relatorio/RelatorioList'
+      | '//relatorio/Relatorio'
       | '//second'
       | '//usuario/UsuarioEdit'
       | '//usuario/UsuarioList'
@@ -81,9 +81,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '//relatorio/RelatorioList': RouteRecordInfo<
-      '//relatorio/RelatorioList',
-      '/relatorio/RelatorioList',
+    '//relatorio/Relatorio': RouteRecordInfo<
+      '//relatorio/Relatorio',
+      '/relatorio/Relatorio',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -137,7 +137,7 @@ declare module 'vue-router/auto-routes' {
         | '//dashboard/Dashboard'
         | '//emprestimo/EmprestimoEdit'
         | '//emprestimo/EmprestimoList'
-        | '//relatorio/RelatorioList'
+        | '//relatorio/Relatorio'
         | '//second'
         | '//usuario/UsuarioEdit'
         | '//usuario/UsuarioList'
@@ -186,9 +186,9 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/index/relatorio/RelatorioList.vue': {
+    'src/pages/index/relatorio/Relatorio.vue': {
       routes:
-        | '//relatorio/RelatorioList'
+        | '//relatorio/Relatorio'
       views:
         | never
       pathParamNames:

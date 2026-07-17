@@ -82,7 +82,7 @@ const linksList: EssentialLinkProps[] = [
     label: "Relatórios",
     caption: "Relatórios",
     icon: "analytics",
-    link: "/relatorio/RelatorioList"
+    link: "/relatorio/Relatorio"
   },
 ];
 
