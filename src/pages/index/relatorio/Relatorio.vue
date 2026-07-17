@@ -1,8 +1,8 @@
 <template>
   <q-page class="q-pt-xl" style="padding-left: 200px;">
-    <div class="text-h4 q-mb-none titulo-usuario">Usuários</div>
+    <div class="text-h4 q-mb-none titulo-relatorio">Relatórios</div>
 
-    <span class="q-mt-xs text-body1 block">Gerencie o cadastro de usuários e seu histórico de empréstimos.</span>
+    <span class="q-mt-xs text-body1 block">Métricas de circulação, acervo e engajamento dos leitores.</span>
 
   </q-page>
 </template>
@@ -12,7 +12,7 @@
 </script>
 
 <style scoped>
-.titulo-usuario {
+.titulo-relatorio {
   font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #1a2e24;
   font-weight: 600;
