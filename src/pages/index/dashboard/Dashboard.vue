@@ -5,93 +5,14 @@
     <span class="q-mt-xs text-body1 block">Aqui está um resumo do acervo e movimentações de hoje.</span>
 
     <div class="q-pt-xl row items-start q-gutter-md">
-      <q-card class="my-card q-pa-lg column justify-between" style="min-height: 160px; border-radius: 12px;">
-        <div class="relative-position full-width">
-          <q-icon size="20px" class="absolute-top-right" color="green-9">
-            <img src="/src/assets/BookOpen.svg" alt="Livro">
-          </q-icon>
-
-          <div class="column q-gutter-y-sm">
-            <span class="text-body1 text-grey-7">Livros no acervo</span>
-            <div class="text-h4 text-bold" style="color: #1B4332;">
-              {{ livros_acervo }}
-            </div>
-          </div>
-        </div>
-
-        <div class="row items-center q-gutter-x-sm text-caption self-start q-mt-md" style="color: #2E7D32;">
-          <q-icon size="14px" color="green-8">
-            <img src="/src/assets/ArrowUpRight.svg" alt="Seta">
-          </q-icon>
-          <span class="text-weight-medium">+2,1% vs. semana passada</span>
-        </div>
-      </q-card>
-
-      <q-card class="my-card q-pa-lg column justify-between" style="min-height: 160px; border-radius: 12px;">
-        <div class="relative-position full-width">
-          <q-icon size="20px" class="absolute-top-right" color="green-9">
-            <img src="/src/assets/BookMarked.svg" alt="Livro">
-          </q-icon>
-
-          <div class="column q-gutter-y-sm">
-            <span class="text-body1 text-grey-7">Empréstimos ativos</span>
-            <div class="text-h4 text-bold" style="color: #1B4332;">
-              {{ emprestimos_ativos }}
-            </div>
-          </div>
-        </div>
-
-        <div class="row items-center q-gutter-x-sm text-caption self-start q-mt-md" style="color: #2E7D32;">
-          <q-icon size="14px" color="green-8">
-            <img src="/src/assets/ArrowUpRight.svg" alt="Seta">
-          </q-icon>
-          <span class="text-weight-medium">+18 vs. semana passada</span>
-        </div>
-      </q-card>
-
-      <q-card class="my-card q-pa-lg column justify-between" style="min-height: 160px; border-radius: 12px;">
-        <div class="relative-position full-width">
-          <q-icon size="20px" class="absolute-top-right" color="green-9">
-            <img src="/src/assets/Users.svg" alt="Livro">
-          </q-icon>
-
-          <div class="column q-gutter-y-sm">
-            <span class="text-body1 text-grey-7">Usuários cadastrados</span>
-            <div class="text-h4 text-bold" style="color: #1B4332;">
-              {{ usuarios_cadastrados }}
-            </div>
-          </div>
-        </div>
-
-        <div class="row items-center q-gutter-x-sm text-caption self-start q-mt-md" style="color: #2E7D32;">
-          <q-icon size="14px" color="green-8">
-            <img src="/src/assets/ArrowUpRight.svg" alt="Seta">
-          </q-icon>
-          <span class="text-weight-medium">+34 vs. semana passada</span>
-        </div>
-      </q-card>
-
-      <q-card class="my-card q-pa-lg column justify-between" style="min-height: 160px; border-radius: 12px;">
-        <div class="relative-position full-width">
-          <q-icon size="20px" class="absolute-top-right" color="green-9">
-            <img src="/src/assets/AlertTriangle.svg" alt="Livro">
-          </q-icon>
-
-          <div class="column q-gutter-y-sm">
-            <span class="text-body1 text-grey-7">Atrasos</span>
-            <div class="text-h4 text-bold" style="color: #1B4332;">
-              {{ atrasos }}
-            </div>
-          </div>
-        </div>
-
-        <div class="row items-center q-gutter-x-sm text-caption self-start q-mt-md" style="color: #2E7D32;">
-          <q-icon size="14px" color="green-8">
-            <img src="/src/assets/ArrowDownRight.svg" alt="Seta">
-          </q-icon>
-          <span class="text-weight-medium">-4 vs. semana passada</span>
-        </div>
-      </q-card>
+      <ViewCard
+      v-for="card in cards"
+      :key="card.titulo"
+      :titulo="card.titulo"
+      :valor="card.valor"
+      :estatistica="card.estatistica"
+      :icon="card.icon"
+      />
     </div>
 
     <div class="q-pt-xl" style="width: 1000px;">
@@ -101,13 +22,20 @@
 </template>
 
 <script setup lang="ts">
+import ViewCard from '@/components/ViewCard.vue';
 import { QTableColumn } from 'quasar'
 
-const lorem = '...'
-let livros_acervo = 4.827;
-let emprestimos_ativos = 312;
-let usuarios_cadastrados = 1.246;
-let atrasos = 27;
+import AlertTriangle from '@/assets/AlertTriangle.png'
+import BookOpen from '@/assets/BookOpen.png'
+import Users from '@/assets/Users.png'
+import BookMarked from '@/assets/BookMarked.png'
+
+const cards = [
+  { titulo: 'Livros no acervo', valor: 4.827, estatistica: 2.1, icon: BookOpen },
+  { titulo: 'Emprestimos ativos', valor: 312, estatistica: 18, icon: BookMarked },
+  { titulo: 'Usuários cadastrados', valor: 1.246, estatistica: 34, icon: Users },
+  { titulo: 'Atrasos', valor: 27, estatistica: -4, icon: AlertTriangle },
+]
 
 interface RowData {
   emprestimo: string
@@ -181,10 +109,8 @@ $cor-fundo: #FAF8F5
   width: 100%
   height: 150px
   max-width: 350px
-  background-color: $cor-fundo
   border-radius: 10px
 
 .my-q-table
-  background-color: $cor-fundo
   border-radius: 10px
 </style>
