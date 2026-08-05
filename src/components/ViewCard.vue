@@ -1,11 +1,11 @@
 <template>
-  <q-card class="view-card q-pa-lg column justify-between" style="min-height: 160px; border-radius: 12px;">
+  <q-card flat bordered class="view-card q-pa-md column justify-between" style="min-height: 120px;">
     <div class="relative-position full-width">
-      <q-icon size="20px" class="absolute-top-right" color="green-9">
-        <img :src="icon" alt="Ícone" width="20" height="20">
+      <q-icon size="18px" class="absolute-top-right" color="green-9">
+        <img :src="icon" alt="Ícone" width="18" height="18">
       </q-icon>
 
-      <div class="column q-gutter-y-sm">
+      <div class="column q-gutter-y-xs">
         <span class="text-body1" style="color: #1A3C2A;">
           {{ titulo }}
         </span>
@@ -15,11 +15,12 @@
       </div>
     </div>
 
-    <div class="row items-center q-gutter-x-sm text-caption self-start q-mt-md" style="color: #2E7D32;">
-      <q-icon size="14px" color="green-8">
-        <img :src="estatistica > 0 ? '/icons/ArrowUpRight.svg' : '/icons/ArrowDownRight.svg'" alt="Seta" width="14"
-          height="14"> </q-icon>
-      <span class="text-weight-medium" :class="estatistica < 0 ? 'text-negative' : ''" :style="estatistica >= 0 ? 'color: #1A3C2A' : ''">{{ estatistica }} vs. semana passada</span>
+    <div class="row items-center q-gutter-x-xs text-caption self-start q-mt-sm" style="color: #2E7D32;">
+      <q-icon size="12px" color="green-8">
+        <img :src="estatistica > 0 ? '/icons/ArrowUpRight.svg' : '/icons/ArrowDownRight.svg'" alt="Seta" width="12"
+          height="12"> </q-icon>
+      <span class="text-weight-medium" :class="estatistica < 0 ? 'text-negative' : ''"
+        :style="estatistica >= 0 ? 'color: #1A3C2A' : ''">{{ estatistica }} vs. semana passada</span>
     </div>
   </q-card>
 </template>
