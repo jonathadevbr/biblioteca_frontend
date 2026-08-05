@@ -1,22 +1,24 @@
 <template>
-  <q-page class="q-pt-xl" style="padding-left: 200px;">
+  <q-page class="q-pt-xl" style="padding-left: 100px;">
     <div class="text-h4 q-mb-none titulo-dasboard">Dashboard</div>
 
     <span class="q-mt-xs text-body1 block">Aqui está um resumo do acervo e movimentações de hoje.</span>
 
     <div class="q-pt-xl row items-start q-gutter-md">
-      <ViewCard
-      v-for="card in cards"
-      :key="card.titulo"
-      :titulo="card.titulo"
-      :valor="card.valor"
-      :estatistica="card.estatistica"
-      :icon="card.icon"
-      />
+      <ViewCard v-for="card in cards" :key="card.titulo" :titulo="card.titulo" :valor="card.valor"
+        :estatistica="card.estatistica" :icon="card.icon" />
     </div>
 
-    <div class="q-pt-xl" style="width: 1000px;">
-      <q-table title="Empréstimos recentes" :rows="rows" :columns="columns" row-key="name" class="my-q-table" />
+    <div class="q-pt-xl" style="width: 700px;">
+      <q-table flat bordered title="Empréstimos recentes" :rows="rows" :columns="columns" row-key="emprestimo"
+        class="my-q-table">
+        <template #body-cell-emprestimos="props">
+          <q-td :props="props">
+            <div class="text-weight-medium">{{ props.row.emprestimo }}</div>
+            <div class="text-caption text-grey">{{ props.row.pessoa }}</div>
+          </q-td>
+        </template>
+      </q-table>
     </div>
   </q-page>
 </template>
@@ -39,6 +41,8 @@ const cards = [
 
 interface RowData {
   emprestimo: string
+  pessoa: string
+  data_emprestimo: string
   data_devolucao: string
   status: boolean
 }
@@ -48,21 +52,28 @@ const columns: QTableColumn<RowData>[] = [
     name: 'emprestimos',
     required: true,
     align: 'left',
-    label: '',
+    label: 'Emprestimo',
     field: (row: RowData) => row.emprestimo,
     format: (val: string) => `${val}`,
     sortable: true
   },
   {
+    name: 'data_emprestimo',
+    label: 'Data do emprestimo',
+    align: 'center',
+    field: 'data_emprestimo',
+    sortable: true
+  },
+  {
     name: 'data_devolucao',
-    label: '',
+    label: 'Data da devolução',
     align: 'center',
     field: 'data_devolucao',
     sortable: true
   },
   {
     name: 'status',
-    label: '',
+    label: 'Status',
     field: 'status',
     sortable: true
   },
@@ -71,26 +82,36 @@ const columns: QTableColumn<RowData>[] = [
 const rows: RowData[] = [
   {
     emprestimo: 'Dom Casmurro',
+    pessoa: 'Ana Ribeiro',
+    data_emprestimo: '09/07/2026',
     data_devolucao: '08/07/2026',
     status: true
   },
   {
     emprestimo: 'Sapiens',
+    pessoa: 'Ana Ribeiro',
+    data_emprestimo: '09/07/2026',
     data_devolucao: '15/07/2026',
     status: true
   },
   {
     emprestimo: 'O Cortiço',
+    pessoa: 'Ana Ribeiro',
+    data_emprestimo: '09/07/2026',
     data_devolucao: '31/07/2026',
     status: true
   },
   {
     emprestimo: '1984',
+    pessoa: 'Ana Ribeiro',
+    data_emprestimo: '09/07/2026',
     data_devolucao: '22/07/2026',
     status: true
   },
   {
     emprestimo: 'A Hora da Estrela',
+    pessoa: 'Ana Ribeiro',
+    data_emprestimo: '09/07/2026',
     data_devolucao: '28/07/2026',
     status: true
   },
@@ -98,19 +119,14 @@ const rows: RowData[] = [
 </script>
 
 <style scoped lang="sass">
+$cor-fundo: #FAF8F5
+
 .titulo-dasboard
   font-family: 'Playfair Display', 'Times New Roman', serif
   color: #1a2e24
   font-weight: 600
 
-$cor-fundo: #FAF8F5
-
-.my-card
-  width: 100%
-  height: 150px
-  max-width: 350px
-  border-radius: 10px
-
 .my-q-table
   border-radius: 10px
+  background-color: $cor-fundo
 </style>
